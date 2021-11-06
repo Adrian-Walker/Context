@@ -3,9 +3,12 @@ import React from 'react';
 function Navbar() {
     return (
         <div className="nav">
-            <div>Home</div>
-            <div>About</div>
-            <div>Contact</div>
+            <ol>
+                <li><a href="google.com">Home</a></li>
+                <li><a href="google.com">About</a></li>
+                <li><a href="google.com">Contact</a></li>
+            </ol>
+
         </div>
     )
 }
