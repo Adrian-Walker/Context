@@ -8,6 +8,12 @@ function ThemeProvider() {
             return prevTheme === "dark" ? "light" : "dark"
         })
     }
+
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 export default ThemeProvider
