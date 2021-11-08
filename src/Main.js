@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from './ThemeProvider';
 
-function Main() {
+function Main(props) {
+
+    const [theme, changeTheme] = useContext(ThemeContext)
+
     return (
         <div className="main">
-            <b>Click The Button To Toggle { } Theme</b>
-            <button className="toggle">Toggle Theme</button>
+            <header className={`${theme}-theme`}>
+                <b>Click The Button To Toggle {theme === "light" ? "Light" : "Dark"} Theme</b>
+            </header>
+
+            <button className={`${theme}-theme`} onClick={changeTheme}>Toggle Theme</button>
 
         </div>
     )

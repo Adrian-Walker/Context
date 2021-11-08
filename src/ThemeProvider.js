@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
+const ThemeContext = React.createContext()
 
-function ThemeProvider() {
-    const [theme, setTheme] = useContext("light")
+function ThemeProvider(props) {
+    const [theme, setTheme] = useState("light")
 
     function changeTheme() {
         setTheme(prevTheme => {
@@ -10,10 +11,12 @@ function ThemeProvider() {
     }
 
     return (
-        <div>
+        <ThemeContext.Provider value={{ theme, changeTheme }}>
+            {props.children}
+        </ThemeContext.Provider>
 
-        </div>
+
     )
 }
 
-export default ThemeProvider
+export { ThemeProvider, ThemeContext }
